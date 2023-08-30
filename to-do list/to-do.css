@@ -1,0 +1,115 @@
+body, html {
+    background-color: rgb(207, 228, 224);
+    font-family: 'Lato', sans-serif;
+    color: #272725;
+}
+
+.container {
+    border: none;
+    border-radius: 25px;
+    position: relative;
+    margin: auto;
+    width: 500px;
+    
+}
+
+#to-do-header {
+    background-color: #272725;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: inherit;
+    border-radius: 25px 25px 0 0;
+}
+
+#input-field {
+    background-color: bisque;
+    position: relative;
+    top: 45px;
+    height: 55px;
+}
+
+#input-ToDo {
+    margin: 2px 0 0 30px;
+    padding: 8px 0 5px 20px;
+    width: 380px;
+    background: transparent;
+    background-color: #fff6df;
+    font-size: 22px;
+    border: none;
+    border-radius: 25px;
+}
+
+#add-button {
+    border: none;
+    border-radius: 25px;
+    color:#272725;
+    margin: 4px 0 0 10px;
+    height: 40px;
+    width: 40px;
+}
+
+#add-button:hover {
+    transition: .3s;
+    background-color: #272725;
+    color: white;
+}
+
+#to-do-container {
+    position: relative;
+    top: 24px;
+    background-color: #fff6df;
+    border-radius: 0 0 25px 25px;
+    padding: 8px 0 10px 35px;
+    font-size: 20px;
+    line-height: 35px;
+
+}
+
+#to-do-container .list-item {
+    font-weight: 700;
+    margin-right: px;
+}
+
+.list-item button {
+    border-radius: 30px;
+    float: right;
+    height: auto;
+    width: 40px;
+    margin: 4px 5px 0px 5px;
+    border: none;
+}
+
+.complete {
+    background-color: white;
+    color: #007074;
+}
+
+.delete {
+    background-color: white;
+    color: #E1926A;
+}
+
+.complete:hover {
+    transition: .3s;
+    background-color: #007074;
+    color: white;
+}
+
+.delete:hover {
+    transition: .3s;
+    background-color: #E1926A;
+    color: white;
+}
+
+
+/* 
+Raisin Black (Text Color)
+#272725
+Skobeloff ((to-do header)
+#007074
+Eggshell (to-do background
+#EEE7D5
+Pale Copper (Cancel to-do button)
+#E1926A
+*/
