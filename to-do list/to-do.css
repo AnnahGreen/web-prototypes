@@ -41,9 +41,12 @@ body, html {
 }
 
 #add-button {
+    position: relative;
+    top: 2px;
     border: none;
     border-radius: 25px;
-    color:#272725;
+    color: white;
+    background-color: #272725;
     margin: 4px 0 0 10px;
     height: 40px;
     width: 40px;
@@ -51,8 +54,8 @@ body, html {
 
 #add-button:hover {
     transition: .3s;
-    background-color: #272725;
-    color: white;
+    background-color: white;
+    color: #272725;
 }
 
 #to-do-container {
@@ -68,7 +71,15 @@ body, html {
 
 #to-do-container .list-item {
     font-weight: 700;
+    /* ERROR here */
     margin-right: px;
+}
+
+.list-item-text {
+    width: 97%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 .list-item button {
@@ -76,30 +87,46 @@ body, html {
     float: right;
     height: auto;
     width: 40px;
-    margin: 4px 5px 0px 5px;
+    margin: 4px 12px 0px 5px;
     border: none;
 }
 
 .complete {
-    background-color: white;
-    color: #007074;
+    background-color: #007074;
+    color: white
 }
 
 .delete {
-    background-color: white;
-    color: #E1926A;
+    background-color: #E1926A;
+    color: white;
 }
 
 .complete:hover {
     transition: .3s;
-    background-color: #007074;
-    color: white;
+    background-color: white;
+    color: #007074;
 }
 
 .delete:hover {
     transition: .3s;
-    background-color: #E1926A;
-    color: white;
+    background-color: white;
+    color: #E1926A;
+}
+
+.reveal-panel {
+    position: absolute;
+    width: 453px;
+    height: inherit;
+    background: cadetblue;
+    color: transparent;
+    transition: transform 1s;
+    transform-origin: 0% 50%;
+    animation: reveal-to-do 1s linear forwards;
+}
+
+@keyframes reveal-to-do {
+    from {width: 453px;}
+    to {width: 0px;}
 }
 
 
@@ -112,4 +139,6 @@ Eggshell (to-do background
 #EEE7D5
 Pale Copper (Cancel to-do button)
 #E1926A
+
+animation: show 600ms 100ms delay iteration-count direction fill-mode;
 */

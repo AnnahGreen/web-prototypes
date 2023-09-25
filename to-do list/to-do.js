@@ -32,6 +32,12 @@ addBtn.addEventListener('click', function(){
     toDoList.appendChild(listItem);
     inputBar.value = "";
 
+    // Animation to reveal to-do on list once user has clicked the 'add' button.
+    let reveal_todo = document.createElement('span');
+    reveal_todo.classList.add('reveal-panel');
+    reveal_todo.innerHTML = "Filler text. Won't display on box. Necessary to initialize.";
+    listItem.appendChild(reveal_todo);
+
     // Add listeners to 'Done' and 'Remove' buttons.
     checkBtn.addEventListener('click', function() {
         toDoList.removeChild(listItem);
@@ -41,14 +47,3 @@ addBtn.addEventListener('click', function(){
     });
 });
 
-
-
-/*
-    let listItem = toDoList.createElement('li');
-    listItem.classList.add('list-item');
-    listItem.innerHTML = inputBar.value;
-    let checkBtn = listItem.createElement('button').classList.add('material-symbols-outlined complete');
-    checkBtn.innerText('done');
-    let deleteBtn = listItem.createElement('button').classList.add('material-symbols-outlined delete');
-    deleteBtn.innerText('delete');
-*/

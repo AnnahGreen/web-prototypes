@@ -15,14 +15,17 @@
     <div class="container">
         <div id ="to-do-header">
             <!-- maybe cute buttons in this -->
-            <p style="padding-left: 15px; font-weight: 600; font-size: medium;">To-Do List Header</p>
+            <p style="padding-left: 15px; font-weight: 600; font-size: medium;">To-Do List</p>
         </div>
         <div id="input-field">
-            <input type="text" id="input-ToDo"> 
+            <input type="text" id="input-ToDo" placeholder="Enter to-do here..."> 
             <button id="add-button"><i class="material-symbols-outlined">add</i></button> 
         </div>
 
         <ul id="to-do-container">
+            <li class="list-item">  <!--  <span class="reveal-panel">a</span> -->
+                <p class="list-item-text"> Example <button class="material-symbols-outlined delete">delete</button> <button class="material-symbols-outlined complete">done</button></p>
+            </li>
              <!-- to-do elements go here from javascript script. ( <li class="to-do-element"> )-->
         </ul>
 
