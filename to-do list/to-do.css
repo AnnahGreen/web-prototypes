@@ -66,17 +66,18 @@ body, html {
     padding: 8px 0 10px 35px;
     font-size: 20px;
     line-height: 35px;
-
 }
 
 #to-do-container .list-item {
     font-weight: 700;
-    /* ERROR here */
-    margin-right: px;
+}
+
+li {
+    display: flex;
 }
 
 .list-item-text {
-    width: 97%;
+    width: 350px;
     margin: 0px;
     word-wrap: break-word;
     white-space: pre-wrap;
@@ -86,7 +87,7 @@ body, html {
 .list-item button {
     border-radius: 30px;
     float: right;
-    height: auto;
+    height: 32px;
     width: 40px;
     margin: 4px 12px 0px 5px;
     border: none;
@@ -114,10 +115,9 @@ body, html {
     color: #E1926A;
 }
 
-.reveal-panel {
+span.reveal-panel {
     position: absolute;
     width: 453px;
-    height: max-content;
     background: cadetblue;
     color: transparent;
     transition: transform 1s;
