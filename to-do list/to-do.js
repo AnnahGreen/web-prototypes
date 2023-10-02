@@ -5,19 +5,14 @@ let addBtn = document.getElementById("add-button");
 
 addBtn.addEventListener('click', function(){
     // Initialize item on to do list from user input inside text box
-    console.log("fuck: ", toDoList.offsetHeight);
+    
 
     // Creating container to hold new list element.
     let listItem = document.createElement('li');
     listItem.classList.add('list-item');
     //let listItemHeight = listItem.offsetHeight;
 
-    // Animation to reveal to-do on list once user has clicked the 'add' button.
-    let reveal_todo = document.createElement('span');
-    reveal_todo.classList.add('reveal-panel');
-    reveal_todo.innerHTML = "a";  /* "a" used here as filler text so that the bar wil show */
-    //reveal_todo.style.height = toDoList.offsetHeight;
-    listItem.appendChild(reveal_todo);
+    /* where span was previously */
     
     //console.log("parent is: ", reveal_todo.parentElement);
     
@@ -48,8 +43,16 @@ addBtn.addEventListener('click', function(){
     inputBar.value = "";
 
     
-    
+    // Animation to reveal to-do on list once user has clicked the 'add' button.
+    let reveal_todo = document.createElement('span');
+    reveal_todo.classList.add('reveal-panel');
+    reveal_todo.innerHTML = "a";  /* "a" used here as filler text so that the bar wil show */
+    let offsetHeight = listItem.offsetHeight;
+    let heightValue = offsetHeight.toString() + "px";
+    reveal_todo.style.height = heightValue;
+    listItem.appendChild(reveal_todo);
 
+    
     
 
     // Add listeners to 'Done' and 'Remove' buttons.

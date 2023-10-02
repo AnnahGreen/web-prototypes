@@ -117,26 +117,25 @@ li {
 
 span.reveal-panel {
     position: absolute;
-    width: 453px;
-    background: cadetblue;
+    /* justify-content: left; */
+    width: 350px;
+    background: #fff6df;
     color: transparent;
-    transition: transform 1s;
-    transform-origin: 0% 50%;
     animation: reveal-to-do 1s linear forwards;
 }
 
 @keyframes reveal-to-do {
-    from {width: 453px;}
-    to {width: 0px;}
+    from { width: 350px; }
+    to { width: 0px; }
 }
 
 
 /* 
 Raisin Black (Text Color)
 #272725
-Skobeloff ((to-do header)
+Skobeloff (to-do header)
 #007074
-Eggshell (to-do background
+Eggshell (to-do background)
 #EEE7D5
 Pale Copper (Cancel to-do button)
 #E1926A
