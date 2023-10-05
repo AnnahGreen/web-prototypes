@@ -94,6 +94,10 @@ li {
     border: none;
 }
 
+.list-item-text:hover + button.edit {
+    color: #272725;
+}
+
 .complete {
     background-color: #007074;
     color: white
@@ -102,6 +106,11 @@ li {
 .delete {
     background-color: #E1926A;
     color: white;
+}
+
+.edit {
+    background-color: transparent;
+    color: transparent;
 }
 
 .complete:hover {
@@ -114,6 +123,12 @@ li {
     transition: .3s;
     background-color: white;
     color: #E1926A;
+}
+
+.edit:hover {
+    color: #272725;
+    border-bottom: bisque solid 3px;
+    
 }
 
 span.reveal-panel {
@@ -132,7 +147,6 @@ span.reveal-panel {
         width: 0px;
     }
 }
-
 
 /* 
 Raisin Black (Text Color)

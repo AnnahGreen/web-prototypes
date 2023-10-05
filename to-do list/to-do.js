@@ -12,17 +12,13 @@ function validateInput() {
 
 addBtn.addEventListener('click', function(){
     // Initialize item on to do list from user input inside text box
-    let validatedInput = validateInput();
+
     // Only add item to list if input bar has a value. Else display an alert() notification.
+    let validatedInput = validateInput();
     if (validatedInput !== false) {  /* Add input to list */
         // Creating container to hold new list element.
         let listItem = document.createElement('li');
         listItem.classList.add('list-item');
-        //let listItemHeight = listItem.offsetHeight;
-
-        /* where span was previously */
-        
-        //console.log("parent is: ", reveal_todo.parentElement);
         
         // Append p element with user input as value.
         let listContent = document.createElement('p');
@@ -30,17 +26,18 @@ addBtn.addEventListener('click', function(){
         listContent.innerHTML = inputBar.value;
         listItem.appendChild(listContent);
 
-        // console.log("Height: ", listItem.offsetHeight)
-        // 'Done" and 'Remove' buttons to the right. 
-    
+        // 'Edit' 'Done" and 'Remove' buttons to the right. 
+        /* 'Edit' button. */ let editBtn = document.createElement('button');
+        editBtn.classList.add('material-symbols-outlined');
+        editBtn.classList.add('edit');
+        editBtn.innerHTML = "edit";
+        listItem.appendChild(editBtn); 
         /* 'Remove' button. */ let deleteBtn = document.createElement('button');
-        //console.log("check: ", deleteBtn);
         deleteBtn.classList.add('material-symbols-outlined');
         deleteBtn.classList.add('delete');
         deleteBtn.innerHTML = "delete";
         listItem.appendChild(deleteBtn); 
         /* 'Done' button. */ let checkBtn = document.createElement('button');
-        //console.log("check: ", checkBtn);
         checkBtn.classList.add('material-symbols-outlined')
         checkBtn.classList.add('complete');
         checkBtn.innerHTML = "done";
@@ -61,13 +58,49 @@ addBtn.addEventListener('click', function(){
         listItem.appendChild(reveal_todo);
         
 
-        // Add listeners to 'Done' and 'Remove' buttons.
+        // Add listeners to 'Edit' 'Done' and 'Remove' buttons.
         checkBtn.addEventListener('click', function() {
             listContent.style.textDecorationLine = "line-through";
         });
         deleteBtn.addEventListener('click', function() {
             toDoList.removeChild(listItem);
         });
+        editBtn.addEventListener('click', function() {
+            let previousTxt = listContent.innerHTML;
+            listContent.innerHTML="";
+            let editInterface = document.createElement('div');
+            let editBox = document.createElement('input');
+            let acceptBtn = document.createElement('button');
+            let cancelBtn = document.createElement('button');
+
+            editInterface.appendChild(editBox);
+            
+            /* 'Accept' and 'Cancel' button initialization. */
+            acceptBtn.innerHTML = "check_circle";
+            cancelBtn.innerHTML = "cancel";
+            editInterface.appendChild(acceptBtn);
+            acceptBtn.classList.add('material-symbols-outlined');
+            acceptBtn.classList.add('check_circle');
+            editInterface.appendChild(cancelBtn);
+            cancelBtn.classList.add('material-symbols-outlined');
+            cancelBtn.classList.add('cancel')
+            listItem.appendChild(editInterface);
+            editInterface.parentNode.insertBefore(editInterface, listContent);
+
+            /* 'Accept' and 'Cancel' button functionality. */
+            acceptBtn.addEventListener('click', function() {
+                listContent.innerHTML = editBox.value;
+                listItem.removeChild(editInterface);
+            })
+            cancelBtn.addEventListener('click', function() {
+                listContent.innerHTML = previousTxt;
+                previousTxt = '';
+                listItem.removeChild(editInterface);
+            })
+
+            
+        });
+
     }
     
 });
